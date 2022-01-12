@@ -22,7 +22,7 @@
       <h1 class="title">We are launching <span class="accent">soon!</span></h1>
 
       <p class="header__byline">Subscribe and get notified</p>
-      <form class="form js-form" action="">
+      <form class="form js-form" action="" novalidate>
         <input
           class="input-text"
           type="email"
@@ -30,6 +30,14 @@
           aria-label="Your Email Address"
           placeholder="Your email address..."
         />
+        <p
+          class="input-warning js-warning"
+          id="email-error"
+          role="alert"
+          hidden
+        >
+          Please provide a valid email address
+        </p>
         <button class="button" type="submit">Notify Me</button>
       </form>
     </header>

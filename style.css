@@ -41,17 +41,32 @@ body {
   font-family: "Libre Franklin", sans-serif;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  justify-content: center;
   min-height: 100vh;
+  margin: 0 1.75em;
 }
 
 .header {
-  margin: 5.375em 2.875em 4.5em;
+  max-width: 640px;
+  margin: 5.375em 1.125em 4.5em;
   text-align: center;
+}
+
+@media (min-width: 600px) {
+  .header {
+    margin-inline: 0;
+  }
 }
 
 .logo {
   width: 55px;
   margin-bottom: 2.75em;
+}
+
+@media (min-width: 600px) {
+  .logo {
+    width: 85px;
+  }
 }
 
 .title {
@@ -61,35 +76,73 @@ body {
   margin-bottom: 1em;
 }
 
+@media (min-width: 600px) {
+  .title {
+    font-size: 2.8125rem;
+    margin-bottom: 0.4em;
+  }
+}
+
 .header__byline {
   color: var(--clr-very-dark-blue);
   font-size: 0.7rem;
   margin-bottom: 3.5em;
 }
 
+@media (min-width: 600px) {
+  .header__byline {
+    font-size: 1.15rem;
+    margin-bottom: 2em;
+  }
+}
+
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: dense;
   gap: 1em 0.625em;
+}
+
+@media (min-width: 600px) {
+  .form {
+    grid-template-columns: 1fr 200px;
+    min-height: 3.5em;
+  }
 }
 
 .input-text {
   font-size: 0.7rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  width: 100%;
   border: 1px solid var(--clr-pale-blue);
-  border-radius: 3em;
+  border-radius: 5em;
   padding: 1em 2em;
 }
 
 .input-text[aria-invalid] {
-  border-color: var(--red);
+  border-color: var(--clr-light-red);
+}
+
+.input-text[aria-invalid]:focus {
+  outline: 2px solid var(--clr-light-red);
 }
 
 .input-text::placeholder {
   color: var(--clr-gray);
 }
 
+.input-warning {
+  grid-column: 1;
+  color: var(--clr-light-red);
+  font-size: 0.6rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  font-style: italic;
+  margin: -1em 0 -0.75em 2.6em;
+  text-align: start;
+}
+
 .button {
   font-size: 0.7rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
   font-weight: bold;
   color: white;
   display: inline-flex;
@@ -98,7 +151,7 @@ body {
   padding: 1em 2em;
   background: var(--clr-blue);
   border: none;
-  border-radius: 2em;
+  border-radius: 5em;
   box-shadow: 0 5px 10px 0 var(--clr-pale-blue);
   transition: background 0.2s ease-in-out;
 }
@@ -109,7 +162,7 @@ body {
 }
 
 .main {
-  margin: 0 1.75em;
+  max-width: 640px;
 }
 
 .footer {
