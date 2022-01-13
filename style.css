@@ -106,7 +106,7 @@ body {
 @media (min-width: 600px) {
   .form {
     grid-template-columns: 1fr 200px;
-    min-height: 3.5em;
+    grid-auto-rows: 3.5em auto;
   }
 }
 
@@ -155,6 +155,7 @@ body {
   border-radius: 5em;
   box-shadow: 0 5px 10px 0 var(--clr-pale-blue);
   transition: background 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .button:hover,
